@@ -29,3 +29,4 @@ response = client.completions.create(
   prompt="请给我的花店起个名")
 
 print(response.choices[0].text.strip())
+# print(response)

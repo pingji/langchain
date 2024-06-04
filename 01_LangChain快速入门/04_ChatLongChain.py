@@ -8,7 +8,7 @@ load_dotenv()  # 加载 .env 文件中的环境变量
 # import os
 # os.environ["OPENAI_API_KEY"] = '你的OpenAI API Key'
 
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 chat = ChatOpenAI(model="gpt-4",
                     temperature=0.8,
                     max_tokens=60)
@@ -20,5 +20,5 @@ messages = [
     SystemMessage(content="你是一个很棒的智能助手"),
     HumanMessage(content="请给我的花店起个名")
 ]
-response = chat(messages)
+response = chat.invoke(messages)
 print(response)
